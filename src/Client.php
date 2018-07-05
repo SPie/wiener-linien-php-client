@@ -2,11 +2,13 @@
 
 namespace SPie\WienerLinien;
 
+use Http\Client\Exception;
 use Http\Client\HttpClient;
 use Http\Discovery\HttpClientDiscovery;
 use Http\Discovery\MessageFactoryDiscovery;
 use Http\Message\MessageFactory;
 use SPie\WienerLinien\Exception\InvalidFaultTypeException;
+use SPie\WienerLinien\Exception\InvalidRequestParameterException;
 use SPie\WienerLinien\Exception\InvalidResponseException;
 use SPie\WienerLinien\Response\MonitorResponse;
 use SPie\WienerLinien\Response\NewsListResponse;
@@ -150,9 +152,15 @@ class Client
      *
      * @throws InvalidFaultTypeException
      * @throws InvalidResponseException
+     * @throws Exception
+     * @throws InvalidRequestParameterException
      */
     public function getMonitors(array $stationNumbers, array $faultTypes = []): MonitorResponse
     {
+        if (empty($stationNumbers)) {
+            throw new InvalidRequestParameterException('$stationNumbers cannot be empty');
+        }
+
         //validate fault type parameter
         if (
             !empty($faultTypes)
@@ -182,6 +190,7 @@ class Client
      * @return TrafficInfoListResponse
      *
      * @throws InvalidResponseException
+     * @throws Exception
      */
     public function getTrafficInfoList(
         array $relatedLines = [],
@@ -205,6 +214,8 @@ class Client
      * @param array $names
      *
      * @return NewsListResponse
+     * @throws Exception
+     * @throws InvalidResponseException
      */
     public function getNewsList(
         array $relatedLines = [],
@@ -230,11 +241,12 @@ class Client
      * Send the request.
      *
      * @param string $action
-     * @param array $parameters
+     * @param array  $parameters
      *
      * @return array
      *
      * @throws InvalidResponseException
+     * @throws Exception
      */
     protected function sendRequest(string $action, array $parameters): array
     {
@@ -251,11 +263,11 @@ class Client
 
         $responseContent = \json_decode($response->getBody()->getContents(), true);
 
-        if (!(\is_array($responseContent) && !empty($responseContent[self::RESPONSE_PARAMETER_DATA]))) {
+        if (!(\is_array($responseContent))) {
             throw new InvalidResponseException('Unknown response');
         }
 
-        return $responseContent[self::RESPONSE_PARAMETER_DATA];
+        return $responseContent;
     }
 
     /**
