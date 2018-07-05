@@ -117,37 +117,39 @@ class MonitorResponse extends Response
      */
     public static function fromResponse(array $response)
     {
+        $data = $response[self::ATTRIBUTE_NAME_DATA];
+
         return new self(
-            !empty($response[self::ATTRIBUTE_NAME_MONITORS])
+            !empty($data[self::ATTRIBUTE_NAME_MONITORS])
                 ? \array_map(
                     function (array $monitor) {
                         return Monitor::fromResponse($monitor);
                     },
-                $response[self::ATTRIBUTE_NAME_MONITORS]
+                $data[self::ATTRIBUTE_NAME_MONITORS]
                 )
                 : [],
-            !empty($response[self::ATTRIBUTE_NAME_TRAFFIC_INFO_CATEGORY_GROUPS])
+            !empty($data[self::ATTRIBUTE_NAME_TRAFFIC_INFO_CATEGORY_GROUPS])
                 ? \array_map(
                     function (array $trafficInfoCategoryGroup) {
                         return TrafficInfoCategoryGroup::fromResponse($trafficInfoCategoryGroup);
                     },
-                    $response[self::ATTRIBUTE_NAME_TRAFFIC_INFO_CATEGORY_GROUPS]
+                    $data[self::ATTRIBUTE_NAME_TRAFFIC_INFO_CATEGORY_GROUPS]
                 )
                 : [],
-            !empty($response[self::ATTRIBUTE_NAME_TRAFFIC_INFO_CATEGORIES])
+            !empty($data[self::ATTRIBUTE_NAME_TRAFFIC_INFO_CATEGORIES])
                 ? \array_map(
                     function (array $trafficInfoCategory) {
                         return TrafficInfoCategory::fromResponse($trafficInfoCategory);
                     },
-                    $response[self::ATTRIBUTE_NAME_TRAFFIC_INFO_CATEGORIES]
+                    $data[self::ATTRIBUTE_NAME_TRAFFIC_INFO_CATEGORIES]
                 )
                 : [],
-            !empty($response[self::ATTRIBUTE_NAME_TRAFFIC_INFOS])
+            !empty($data[self::ATTRIBUTE_NAME_TRAFFIC_INFOS])
                 ? \array_map(
                     function (array $trafficInfo) {
                         return TrafficInfo::fromResponse($trafficInfo);
                     },
-                    $response[self::ATTRIBUTE_NAME_TRAFFIC_INFOS]
+                    $data[self::ATTRIBUTE_NAME_TRAFFIC_INFOS]
                 )
                 : [],
             !empty($response[self::ATTRIBUTE_NAME_MESSAGE])

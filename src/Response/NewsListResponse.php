@@ -54,29 +54,31 @@ class NewsListResponse extends Response
      */
     public static function fromResponse(array $response)
     {
+        $data = $response[self::ATTRIBUTE_NAME_DATA] ?? [];
+
         return new self(
-            !empty($response[self::ATTRIBUTE_NAME_POI_CATEGORY_GROUPS])
+            !empty($data[self::ATTRIBUTE_NAME_POI_CATEGORY_GROUPS])
                 ? \array_map(
                     function (array $poiCategoryGroup) {
                         return PoiCategoryGroup::fromResponse($poiCategoryGroup);
                     },
-                    $response[self::ATTRIBUTE_NAME_POI_CATEGORY_GROUPS]
+                    $data[self::ATTRIBUTE_NAME_POI_CATEGORY_GROUPS]
                 )
                 : [],
-            !empty($response[self::ATTRIBUTE_NAME_POI_CATEGORIES])
+            !empty($data[self::ATTRIBUTE_NAME_POI_CATEGORIES])
                 ? \array_map(
                     function (array $poiCategory) {
                         return PoiCategory::fromResponse($poiCategory);
                     },
-                    $response[self::ATTRIBUTE_NAME_POI_CATEGORIES]
+                    $data[self::ATTRIBUTE_NAME_POI_CATEGORIES]
                 )
                 : [],
-            !empty($response[self::ATTRIBUTE_NAME_POIS])
+            !empty($data[self::ATTRIBUTE_NAME_POIS])
                 ? \array_map(
                     function (array $poi) {
                         return Poi::fromResponse($poi);
                     },
-                    $response[self::ATTRIBUTE_NAME_POIS]
+                    $data[self::ATTRIBUTE_NAME_POIS]
                 )
                 : []
         );
