@@ -18,12 +18,19 @@
     },
     "require-dev": {
         "php-http/mock-client": "^1.0",
-        "php-http/guzzle6-adapter": "^1.1"
+        "php-http/guzzle6-adapter": "^1.1",
+        "phpunit/phpunit": "^7.3",
+        "fzaninotto/faker": "^1.8"
     },
     "autoload": {
         "psr-4": {
             "SPie\\WienerLinien\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/"
+        ]
     },
     "minimum-stability": "dev",
     "prefer-stable": true

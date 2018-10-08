@@ -7,7 +7,7 @@ use SPie\WienerLinien\Response\ResponseObjectInterface;
 /**
  * Class Geometry
  *
- * @package SPie\WienerLinien\Response
+ * @package SPie\WienerLinien\Response\DataObjects
  */
 class Geometry implements ResponseObjectInterface
 {

@@ -9,7 +9,7 @@ use SPie\WienerLinien\Response\ResponseObjectInterface;
  *
  * The monitors response objetc.
  *
- * @package SPie\WienerLinien\Response
+ * @package SPie\WienerLinien\Response\DataObjects
  */
 class Monitor implements ResponseObjectInterface
 {

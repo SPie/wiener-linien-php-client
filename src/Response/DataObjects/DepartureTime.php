@@ -7,7 +7,7 @@ use SPie\WienerLinien\Response\ResponseObjectInterface;
 /**
  * Class DepartureTime
  *
- * @package SPie\WienerLinien\Response
+ * @package SPie\WienerLinien\Response\DataObjects
  */
 class DepartureTime implements ResponseObjectInterface
 {
