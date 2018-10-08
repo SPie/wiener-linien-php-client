@@ -48,6 +48,30 @@ class NewsListResponse extends Response
     }
 
     /**
+     * @return PoiCategoryGroup[]
+     */
+    public function getPoiCategoryGroups(): array
+    {
+        return $this->poiCategoryGroups;
+    }
+
+    /**
+     * @return PoiCategory[]
+     */
+    public function getPoiCategories(): array
+    {
+        return $this->poiCategories;
+    }
+
+    /**
+     * @return Poi[]
+     */
+    public function getPois(): array
+    {
+        return $this->pois;
+    }
+
+    /**
      * @param array $response
      *
      * @return self

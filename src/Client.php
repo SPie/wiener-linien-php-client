@@ -162,15 +162,20 @@ class Client
         }
 
         //validate fault type parameter
-        if (
-            !empty($faultTypes)
-            && !\in_array($faultTypes, [
-                self::FAULT_TYPE_FAULT_SHORT,
-                self::FAULT_TYPE_FAULT_LONG,
-                self::FAULT_TYPE_ELEVATOR_INFO,
-            ])
-        ) {
-            throw new InvalidFaultTypeException('Fault type ' . $faultTypes . ' is not valid');
+        if (!empty($faultTypes)) {
+            $invalidFaultTypes = \array_diff(
+                $faultTypes,
+                [
+                    self::FAULT_TYPE_FAULT_SHORT,
+                    self::FAULT_TYPE_FAULT_LONG,
+                    self::FAULT_TYPE_ELEVATOR_INFO,
+                ]
+            );
+            if (!empty($invalidFaultTypes)) {
+                throw new InvalidFaultTypeException(
+                    'Fault types ' . \implode(',', $invalidFaultTypes) . ' are not valid'
+                );
+            }
         }
 
         return MonitorResponse::fromResponse($this->sendRequest(

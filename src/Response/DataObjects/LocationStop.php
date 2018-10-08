@@ -9,7 +9,7 @@ use SPie\WienerLinien\Response\ResponseObjectInterface;
  *
  * Location stop response object.
  *
- * @package SPie\WienerLinien\Response
+ * @package SPie\WienerLinien\Response\DataObjects
  */
 class LocationStop implements ResponseObjectInterface
 {

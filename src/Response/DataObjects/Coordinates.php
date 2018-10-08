@@ -7,7 +7,7 @@ use SPie\WienerLinien\Response\ResponseObjectInterface;
 /**
  * Class Coordinates
  *
- * @package SPie\WienerLinien\Response
+ * @package SPie\WienerLinien\Response\DataObjects
  */
 class Coordinates implements ResponseObjectInterface
 {

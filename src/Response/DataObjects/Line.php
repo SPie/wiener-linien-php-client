@@ -5,7 +5,7 @@ namespace SPie\WienerLinien\Response\DataObjects;
 /**
  * Class Line
  *
- * @package SPie\WienerLinien\Response
+ * @package SPie\WienerLinien\Response\DataObjects
  */
 class Line extends Vehicle
 {
