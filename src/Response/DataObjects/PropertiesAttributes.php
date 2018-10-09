@@ -9,7 +9,7 @@ use SPie\WienerLinien\Response\ResponseObjectInterface;
  *
  * @package SPie\WienerLinien\Response
  */
-class PropertiesAttributes implements ResponseObjectInterface
+final class PropertiesAttributes implements ResponseObjectInterface
 {
 
     const ATTRIBUTE_NAME_RBL_NUMBER = 'rbl';

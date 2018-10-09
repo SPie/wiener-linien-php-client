@@ -7,7 +7,7 @@ namespace SPie\WienerLinien\Response;
  *
  * @package SPie\WienerLinien\Response
  */
-class ResponseMessage implements ResponseObjectInterface
+final class ResponseMessage implements ResponseObjectInterface
 {
 
     const MESSAGE_CODE_OK                         = 1;

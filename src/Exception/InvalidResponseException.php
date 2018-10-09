@@ -7,7 +7,7 @@ namespace SPie\WienerLinien\Exception;
  *
  * @package SPie\WienerLinien\Exception
  */
-class InvalidResponseException extends \Exception
+final class InvalidResponseException extends \Exception
 {
 
 }

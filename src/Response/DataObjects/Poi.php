@@ -9,7 +9,7 @@ use SPie\WienerLinien\Response\ResponseObjectInterface;
  *
  * @package SPie\WienerLinien\Response\DataObjects
  */
-class Poi implements ResponseObjectInterface
+final class Poi implements ResponseObjectInterface
 {
 
     const ATTRIBUTE_NAME_REF_POI_CATEGORY_ID = 'refPoiCategoryId';

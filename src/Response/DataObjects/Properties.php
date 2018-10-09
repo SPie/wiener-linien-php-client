@@ -9,7 +9,7 @@ use SPie\WienerLinien\Response\ResponseObjectInterface;
  *
  * @package SPie\WienerLinien\Response
  */
-class Properties implements ResponseObjectInterface
+final class Properties implements ResponseObjectInterface
 {
 
     const ATTRIBUTE_NAME_NAME            = 'name';

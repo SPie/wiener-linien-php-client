@@ -9,7 +9,7 @@ use SPie\WienerLinien\Response\ResponseObjectInterface;
  *
  * @package SPie\WienerLinien\Response\DataObjects
  */
-class DepartureTime implements ResponseObjectInterface
+final class DepartureTime implements ResponseObjectInterface
 {
 
     const ATTRIBUTE_NAME_TIME_PLANNED = 'timePlanned';

@@ -7,7 +7,7 @@ namespace SPie\WienerLinien\Exception;
  *
  * @package SPie\WienerLinien\Exception
  */
-class InvalidFaultTypeException extends \Exception
+final class InvalidFaultTypeException extends \Exception
 {
 
 }

@@ -9,7 +9,7 @@ use SPie\WienerLinien\Response\ResponseObjectInterface;
  *
  * @package SPie\WienerLinien\Response
  */
-class TrafficInfoCategory implements ResponseObjectInterface
+final class TrafficInfoCategory implements ResponseObjectInterface
 {
 
     const ATTRIBUTE_NAME_ID                                 = 'id';

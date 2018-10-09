@@ -2,18 +2,27 @@
 
 namespace SPie\WienerLinien\Response\DataObjects;
 
+use SPie\WienerLinien\Response\ResponseObjectInterface;
+
 /**
  * Class Line
  *
  * @package SPie\WienerLinien\Response\DataObjects
  */
-class Line extends Vehicle
+final class Line implements ResponseObjectInterface
 {
 
     const ATTRIBUTE_NAME_TOWARDS            = 'towards';
     const ATTRIBUTE_NAME_LINE_ID            = 'lineId';
     const ATTRIBUTE_NAME_DEPARTURES         = 'departures';
     const ATTRIBUTE_NAME_DEPARTURE          = 'departure';
+    const ATTRIBUTE_NAME_NAME               = 'name';
+    const ATTRIBUTE_NAME_DIRECTION          = 'direction';
+    const ATTRIBUTE_NAME_DIRECTION_ID       = 'richtungsId';
+    const ATTRIBUTE_NAME_BARRIER_FREE       = 'barrierFree';
+    const ATTRIBUTE_NAME_REALTIME_SUPPORTED = 'realtimeSupported';
+    const ATTRIBUTE_NAME_TRAFFIC_JAM        = 'trafficjam';
+    const ATTRIBUTE_NAME_TYPE               = 'type';
 
     /**
      * @var string
@@ -29,6 +38,41 @@ class Line extends Vehicle
      * @var Departure[]
      */
     private $departures;
+
+    /**
+     * @var string
+     */
+    private $name;
+
+    /**
+     * @var string
+     */
+    private $direction;
+
+    /**
+     * @var int
+     */
+    private $directionId;
+
+    /**
+     * @var bool|null
+     */
+    private $barrierFree;
+
+    /**
+     * @var bool|null
+     */
+    private $realtimeSupported;
+
+    /**
+     * @var bool|null
+     */
+    private $trafficJam;
+
+    /**
+     * @var string
+     */
+    private $type;
 
     /**
      * Line constructor.
@@ -57,11 +101,16 @@ class Line extends Vehicle
         array $departures
     )
     {
-        $this->towards    = $towards;
-        $this->lineId     = $lineId;
+        $this->towards = $towards;
+        $this->lineId = $lineId;
         $this->departures = $departures;
-
-        parent::__construct($name, $direction, $directionId, $barrierFree, $realtimeSupported, $trafficJam, $type);
+        $this->name = $name;
+        $this->direction = $direction;
+        $this->directionId = $directionId;
+        $this->barrierFree = $barrierFree;
+        $this->realtimeSupported = $realtimeSupported;
+        $this->trafficJam = $trafficJam;
+        $this->type = $type;
     }
 
     /**
@@ -86,6 +135,62 @@ class Line extends Vehicle
     public function getDepartures(): array
     {
         return $this->departures;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDirection(): string
+    {
+        return $this->direction;
+    }
+
+    /**
+     * @return int
+     */
+    public function getDirectionId(): int
+    {
+        return $this->directionId;
+    }
+
+    /**
+     * @return bool|null
+     */
+    public function getBarrierFree(): ?bool
+    {
+        return $this->barrierFree;
+    }
+
+    /**
+     * @return bool|null
+     */
+    public function getRealtimeSupported(): ?bool
+    {
+        return $this->realtimeSupported;
+    }
+
+    /**
+     * @return bool|null
+     */
+    public function getTrafficJam(): ?bool
+    {
+        return $this->trafficJam;
+    }
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return $this->type;
     }
 
     /**

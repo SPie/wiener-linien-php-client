@@ -7,7 +7,7 @@ namespace SPie\WienerLinien\Exception;
  *
  * @package SPie\WienerLinien\Exception
  */
-class InvalidRequestParameterException extends \Exception
+final class InvalidRequestParameterException extends \Exception
 {
 
 }
