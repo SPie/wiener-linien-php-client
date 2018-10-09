@@ -11,7 +11,7 @@ use SPie\WienerLinien\Response\ResponseObjectInterface;
  *
  * @package SPie\WienerLinien\Response\DataObjects
  */
-class Monitor implements ResponseObjectInterface
+final class Monitor implements ResponseObjectInterface
 {
 
     const ATTRIBUTE_NAME_LOCATION_STOP          = 'locationStop';

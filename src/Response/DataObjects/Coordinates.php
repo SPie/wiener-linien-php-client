@@ -9,7 +9,7 @@ use SPie\WienerLinien\Response\ResponseObjectInterface;
  *
  * @package SPie\WienerLinien\Response\DataObjects
  */
-class Coordinates implements ResponseObjectInterface
+final class Coordinates implements ResponseObjectInterface
 {
 
     const ATTRIBUTE_NAME_LATITUDE  = 0;

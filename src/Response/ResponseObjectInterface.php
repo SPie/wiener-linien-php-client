@@ -10,6 +10,8 @@ namespace SPie\WienerLinien\Response;
 interface ResponseObjectInterface
 {
 
+    const ATTRIBUTE_NAME_DATA = 'data';
+
     /**
      * @param array $response
      *

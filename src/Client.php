@@ -19,7 +19,7 @@ use SPie\WienerLinien\Response\TrafficInfoListResponse;
  *
  * @package SPie\WienerLinien
  */
-class Client
+final class Client
 {
 
     /*

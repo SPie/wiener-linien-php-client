@@ -11,7 +11,7 @@ use SPie\WienerLinien\Response\DataObjects\TrafficInfoCategoryGroup;
  *
  * @package SPie\WienerLinien\Response
  */
-class TrafficInfoListResponse extends Response
+final class TrafficInfoListResponse implements ResponseObjectInterface
 {
 
     const ATTRIBUTE_NAME_TRAFFIC_INFO_CATEGORY_GROUPS = 'trafficInfoCategoryGroups';

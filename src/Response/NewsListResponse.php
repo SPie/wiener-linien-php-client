@@ -11,7 +11,7 @@ use SPie\WienerLinien\Response\DataObjects\PoiCategoryGroup;
  *
  * @package SPie\WienerLinien\Response
  */
-class NewsListResponse extends Response
+final class NewsListResponse implements ResponseObjectInterface
 {
 
     const ATTRIBUTE_NAME_POI_CATEGORY_GROUPS = 'poiCategoryGroups';

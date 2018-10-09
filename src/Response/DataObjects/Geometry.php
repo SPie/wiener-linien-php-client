@@ -9,7 +9,7 @@ use SPie\WienerLinien\Response\ResponseObjectInterface;
  *
  * @package SPie\WienerLinien\Response\DataObjects
  */
-class Geometry implements ResponseObjectInterface
+final class Geometry implements ResponseObjectInterface
 {
 
     const ATTRIBUTE_NAME_TYPE        = 'type';

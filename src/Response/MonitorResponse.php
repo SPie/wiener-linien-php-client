@@ -12,7 +12,7 @@ use SPie\WienerLinien\Response\DataObjects\TrafficInfoCategoryGroup;
  *
  * @package SPie\WienerLinien\Response
  */
-class MonitorResponse extends Response
+final class MonitorResponse implements ResponseObjectInterface
 {
 
     const ATTRIBUTE_NAME_MONITORS                     = 'monitors';

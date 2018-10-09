@@ -9,7 +9,7 @@ use SPie\WienerLinien\Response\ResponseObjectInterface;
  *
  * @package SPie\WienerLinien\Response
  */
-class TrafficTime implements ResponseObjectInterface
+final class TrafficTime implements ResponseObjectInterface
 {
 
     const ATTRIBUTE_NAME_START  = 'start';

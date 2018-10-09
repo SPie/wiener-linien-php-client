@@ -11,7 +11,7 @@ use SPie\WienerLinien\Response\ResponseObjectInterface;
  *
  * @package SPie\WienerLinien\Response\DataObjects
  */
-class LocationStop implements ResponseObjectInterface
+final class LocationStop implements ResponseObjectInterface
 {
 
     const ATTRIBUTE_NAME_TYPE       = 'type';

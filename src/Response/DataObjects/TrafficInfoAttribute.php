@@ -9,7 +9,7 @@ use SPie\WienerLinien\Response\ResponseObjectInterface;
  *
  * @package SPie\WienerLinien\Response
  */
-class TrafficInfoAttribute implements ResponseObjectInterface
+final class TrafficInfoAttribute implements ResponseObjectInterface
 {
 
     const ATTRIBUTE_NAME_STATUS        = 'status';
